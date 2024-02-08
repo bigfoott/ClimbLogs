@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ClimbLogs</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="src/main.css">
+    </head>
+    <body onload="onLoad()" class="has-navbar-fixed-top">
+        <section>
+            <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <p class="navbar-item">
+                        ClimbLogs
+                    </p>
+                
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="burgerClick()" id="nav-burger">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="nav-menu" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item">Test</a>
+                        <a class="navbar-item">Test 2</a>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="columns is-multiline is-mobile" id="vx-container">
+                </div>
+            </div>
+        </section>
+        
+        <script type="text/javascript" src="/src/vx.js"></script>
+        <script type="text/javascript" src="/src/menu.js"></script>
+        <script type="text/javascript" src="/src/main.js"></script>
+    </body>
+</html>
