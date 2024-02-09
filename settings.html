@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link rel="stylesheet" href="src/main.css">
     </head>
-    <body onload="onLoad()" class="has-navbar-fixed-top">
+    <body onload="onLoadSettings()" class="has-navbar-fixed-top">
         <section>
             <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
@@ -32,14 +32,17 @@
         </section>
         <section class="section">
             <div class="container">
-                <div class="columns is-multiline is-mobile" id="vx-container">
+                <div class="box">
+                    <h1 class="title is-5">V Grades</h1>
+                    <div id="vx-settings" class="columns is-multiline is-mobile">
+
+                    </div>
                 </div>
             </div>
         </section>
         
-        <script type="text/javascript" src="/src/vx.js"></script>
-        <script type="text/javascript" src="/src/settings.js"></script>
         <script type="text/javascript" src="/src/menu.js"></script>
+        <script type="text/javascript" src="/src/settings.js"></script>
         <script type="text/javascript" src="/src/main.js"></script>
     </body>
 </html>

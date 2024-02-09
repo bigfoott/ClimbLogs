@@ -30,6 +30,8 @@ function onLoad()
     navBurger = document.getElementById("nav-burger");
     navMenu = document.getElementById("nav-menu");
 
+    loadSettings();
+
     //remove this later
     populateVX();
 }

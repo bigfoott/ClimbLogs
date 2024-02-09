@@ -32,3 +32,16 @@ html {
 .navbar-item {
     color: var(--text-color);
 }
+
+.box {
+    background-color: var(--background-accent-color);
+    color: var(--text-color);
+}
+
+.title {
+    color: var(--text-color);
+}
+
+.checkbox:hover {
+    color: var(--text-color);
+}
