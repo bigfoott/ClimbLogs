@@ -26,20 +26,39 @@
                     <div class="navbar-start">
                         <a class="navbar-item" href="/">Home</a>
                         <a class="navbar-item" href="/settings.html">Settings</a>
+                        <a class="navbar-item button is-danger" onclick="endSession(); burgerClick()" id="endsession-button" style="display: none;">End Session</a>
                     </div>
                 </div>
             </nav>
         </section>
         <section class="section">
             <div class="container">
+                <div class="box has-text-centered" id="main-container">
+                    <a class="button is-success" onclick="startSession()">Start Session</a>
+                </div>
                 <div class="columns is-multiline is-mobile" id="vx-container">
                 </div>
             </div>
+            <div class="container" style="margin-top: 1em;" id="last-stats-container">
+                <div class="box">
+                    <h1 class="title is-4 has-text-centered" style="margin-bottom: 0.25em">Last Session's Stats</h1>
+                    <div id="last-session"></div>
+                    <div class="has-text-centered"><a class="button is-warning" onclick="copyStats()">Copy Stats</a></div>
+                </div>
+            </div>
+            <div class="modal" id="vx-modal">
+                <div class="modal-background" onclick="closeVXModal()"></div>
+                <div class="modal-content">
+                    <div class="box" id="vx-modal-inner"></div>
+                </div>
+                <button class="modal-close is-large" aria-label="close" onclick="closeVXModal()"></button>
+            </div>
         </section>
         
-        <script type="text/javascript" src="/src/vx.js"></script>
-        <script type="text/javascript" src="/src/settings.js"></script>
-        <script type="text/javascript" src="/src/menu.js"></script>
-        <script type="text/javascript" src="/src/main.js"></script>
+        <script type="text/javascript" src="src/vx.js"></script>
+        <script type="text/javascript" src="src/sessions.js"></script>
+        <script type="text/javascript" src="src/settings.js"></script>
+        <script type="text/javascript" src="src/menu.js"></script>
+        <script type="text/javascript" src="src/main.js"></script>
     </body>
 </html>

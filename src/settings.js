@@ -2,6 +2,9 @@ var vx_settings;
 
 function onLoadSettings()
 {
+    navBurger = document.getElementById("nav-burger");
+    navMenu = document.getElementById("nav-menu");
+
     loadSettings();
 
     var vxSettings = document.getElementById("vx-settings");
@@ -16,7 +19,6 @@ function onLoadSettings()
 function loadSettings()
 {
     vx_settings = JSON.parse(localStorage.getItem("vx_settings"));
-    console.log(vx_settings);
     if (vx_settings == null)
     {
         vx_settings = {

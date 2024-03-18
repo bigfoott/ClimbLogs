@@ -1,7 +1,9 @@
 var vxContainer;
+var mainContainer;
 
 var navBurger;
 var navMenu;
+var endSessionButton;
 
 var climbGrades = [
     { "name": "V0", "category": "beginner" },
@@ -27,11 +29,53 @@ var climbGrades = [
 function onLoad()
 {
     vxContainer = document.getElementById("vx-container");
+    mainContainer = document.getElementById("main-container");
     navBurger = document.getElementById("nav-burger");
     navMenu = document.getElementById("nav-menu");
+    endSessionButton = document.getElementById("endsession-button");
 
     loadSettings();
+    loadSessionHistory();
 
-    //remove this later
+    if (localStorage.getItem("sessionRunning") == "TRUE")
+    {
+        loadExistingSession();
+        startSession(false);
+    }
+    else
+    {
+        populateLastSession();
+    }
+}
+
+function startSession(first = true)
+{
     populateVX();
+    mainContainer.style.display = "none";
+    endSessionButton.style.display = "block";
+    document.getElementById("last-stats-container").style.display = "none";
+    sessionRunning = true;
+
+    if (first)
+    {
+        localStorage.setItem("sessionRunning", "TRUE");
+        initializeSession();
+    }
+}
+
+function endSession()
+{
+    vxContainer.innerHTML = "";
+    mainContainer.style.display = "block";
+    endSessionButton.style.display = "none";
+    document.getElementById("last-stats-container").style.display = "block";
+    
+    sessionRunning = false;
+    localStorage.setItem("sessionRunning", "FALSE");
+
+    sessionHistory.push(currentSession);
+    saveSessionHistory();
+    currentSession = [];
+
+    populateLastSession();
 }
