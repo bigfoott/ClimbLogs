@@ -1,8 +1,6 @@
 var vxContainer;
 var mainContainer;
 
-var navBurger;
-var navMenu;
 var endSessionButton;
 
 var climbGrades = [
@@ -30,8 +28,6 @@ function onLoad()
 {
     vxContainer = document.getElementById("vx-container");
     mainContainer = document.getElementById("main-container");
-    navBurger = document.getElementById("nav-burger");
-    navMenu = document.getElementById("nav-menu");
     endSessionButton = document.getElementById("endsession-button");
 
     loadSettings();

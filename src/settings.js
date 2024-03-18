@@ -2,9 +2,6 @@ var vx_settings;
 
 function onLoadSettings()
 {
-    navBurger = document.getElementById("nav-burger");
-    navMenu = document.getElementById("nav-menu");
-
     loadSettings();
 
     var vxSettings = document.getElementById("vx-settings");
