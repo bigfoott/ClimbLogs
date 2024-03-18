@@ -6,8 +6,9 @@
         <title>ClimbLogs</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link rel="stylesheet" href="src/main.css">
+        <link href='https://unpkg.com/css.gg@2.0.0/icons/css/trash.css' rel='stylesheet'>
     </head>
-    <body onload="onLoad()" class="has-navbar-fixed-top">
+    <body onload="onLoadHistory()" class="has-navbar-fixed-top">
         <section>
             <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
@@ -34,31 +35,37 @@
         </section>
         <section class="section">
             <div class="container">
-                <div class="box has-text-centered" id="main-container">
-                    <a class="button is-success" onclick="startSession()">Start Session</a>
-                </div>
-                <div class="columns is-multiline is-mobile" id="vx-container">
-                </div>
-            </div>
-            <div class="container" style="margin-top: 1em;" id="last-stats-container">
                 <div class="box">
-                    <h1 class="title is-4 has-text-centered" style="margin-bottom: 0.25em">Last Session's Stats</h1>
-                    <div id="last-session"></div>
-                    <div class="has-text-centered"><a class="button is-warning" onclick="copyStats()">Copy Stats</a></div>
+                    <h1 class="title is-5">Climb History</h1>
+                    <div class="table-container">
+                        <table class="table is-striped is-narrow is-fullwidth">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Date</th>
+                                    <th>Sends</th>
+                                    <th>Attempts</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-table">
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <div class="modal" id="vx-modal">
-                <div class="modal-background" onclick="closeVXModal()"></div>
+            <div class="modal" id="dh-modal">
+                <div class="modal-background" onclick="closeDeleteHistoryModal()"></div>
                 <div class="modal-content">
-                    <div class="box" id="vx-modal-inner"></div>
+                    <div class="box" id="dh-modal-inner"></div>
                 </div>
-                <button class="modal-close is-large" aria-label="close" onclick="closeVXModal()"></button>
+                <button class="modal-close is-large" aria-label="close" onclick="closeDeleteHistoryModal()"></button>
             </div>
         </section>
         
-        <script type="text/javascript" src="src/vx.js"></script>
+        <script type="text/javascript" src="src/history.js"></script>
         <script type="text/javascript" src="src/sessions.js"></script>
-        <script type="text/javascript" src="src/settings.js"></script>
         <script type="text/javascript" src="src/menu.js"></script>
         <script type="text/javascript" src="src/main.js"></script>
     </body>

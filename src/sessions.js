@@ -56,10 +56,11 @@ function saveSessionHistory()
 function initializeSession()
 {
     var newID = 1;
-    if (sessionHistory.length > 0)
+    if (localStorage.getItem("sessionID") != null)
     {
-        newID = sessionHistory[sessionHistory.length - 1].id + 1;
+        newID = localStorage.getItem("sessionID") + 1;
     }
+    localStorage.setItem("sessionID", newID);
 
     currentSession = new session();
     currentSession.id = newID;
