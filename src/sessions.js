@@ -24,9 +24,9 @@ climbGradesEmoji["V15"] = "🟫";
 climbGradesEmoji["V16"] = "🟫";
 climbGradesEmoji["V17"] = "🟫";
 
-function session() {
-    this.id = null;
-    this.date = null;
+function session(id, date) {
+    this.id = id;
+    this.date = date;
     this.sends = [];
     this.attempts = [];
 }
@@ -58,13 +58,11 @@ function initializeSession()
     var newID = 1;
     if (localStorage.getItem("sessionID") != null)
     {
-        newID = localStorage.getItem("sessionID") + 1;
+        newID = parseInt(localStorage.getItem("sessionID")) + 1;
     }
     localStorage.setItem("sessionID", newID);
 
-    currentSession = new session();
-    currentSession.id = newID;
-    currentSession.date = "" + new Date();
+    currentSession = new session(newID, new Date());
 
     saveExistingSession();
 }
